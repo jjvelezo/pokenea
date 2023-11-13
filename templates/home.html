@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(
+                45deg,
+                #f2f2f2 25%,
+                transparent 25%,
+                transparent 50%,
+                #f2f2f2 50%,
+                #f2f2f2 75%,
+                transparent 75%,
+                transparent
+            );
+        }
+
+        .pokedex-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            transition: box-shadow 0.3s ease; /* Transición suave en la sombra */
+        }
+
+        .pokedex-container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+        }
+
+        h1 {
+            color: #23145b;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .pokenea-container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: #09456c;
+            transition: transform 0.3s ease; /* Transición suave en la imagen */
+        }
+
+        img:hover {
+            transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+        }
+
+        .pokenea-info {
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: #026f6e;
+            color: white;
+        }
+
+        .pokenea-info h2, .pokenea-info p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pokedex-container">
+        <h1>Información Pokenea</h1>
+        <div class="pokenea-container">
+            <img src="{{ pokenea.imagen }}" alt="Pokenea">
+            <div class="pokenea-info">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <td>{{ pokenea.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ pokenea.nombre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Altura</th>
+                        <td>{{ pokenea.altura }} m</td>
+                    </tr>
+                    <tr>
+                        <th>Habilidad</th>
+                        <td>{{ pokenea.habilidad }}</td>
+                    </tr>
+                    <tr>
+                        <th>Frase Filosófica</th>
+                        <td>{{ pokenea.frase_filosofica }}</td>
+                    </tr>
+                    <tr>
+                        <th>ID del Contenedor</th>
+                        <td>{{ id_contenedor }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
