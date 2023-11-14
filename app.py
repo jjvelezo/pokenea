@@ -27,6 +27,6 @@ def get_random_pokenea_info():
 
 
 if __name__ == '__main__':
-    app.run(host='34.121.143.117', port=80)
+    app.run(host='0.0.0.0', port=80)
 
 
